@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vtrack">
         <activity
-            android:name=".HomePage"
+            android:name=".LoginPageActivity"
             android:exported="false" />
         <activity
-            android:name="LoginPageActivity"
+            android:name=".HomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
