@@ -19,7 +19,7 @@ public class HomePage extends AppCompatActivity {
     static final String stops[]={"15 Stops","20 Stops","22 Stops","15 Stops","15 Stops","15 Stops","15 Stops","15 Stops"};
     static final String BusNames[]={"AP 35 AB 4777","AP 35 AB 1234","AP 35 AB 7688","AP 35 AB 7896","AP 35 AB 7788","AP 35 AB 7744",
             "AP 35 AB 1122","AP 35 AB 4777"};
-    static final String rating[]={"4.5","3.5","2.7","4.5","4.5","3.5","1.7","4.5"};
+    static final double rating[]={4.5,3.5,2.7,4.5,4.5,3.5,1.7,4.5};
     static final String people[]={"126","75","125","125","125","125","125","125"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,17 +58,18 @@ public class HomePage extends AppCompatActivity {
             BusNo.setText(BusNames[position]);
             Stops.setText(stops[position]);
             People.setText(people[position]);
-            RelativeLayout r=findViewById(R.id.r1);
-            Rating.setText(rating[position]);
-           /* if(Integer.parseInt(people[position])<3){
-                r.setBackgroundColor(Integer.parseInt("#dc3545"));
+            RelativeLayout r=view.findViewById(R.id.r1);
+            Rating.setText(String.valueOf(rating[position]));
+//            System.out.println(Integer.parseInt(rating[position]));
+            if(rating[position]<3.0){
+                r.setBackgroundColor(getResources().getColor(R.color.red));
             }
-            else if(Integer.parseInt(people[position])<4 &&Integer.parseInt(people[position])>=3){
-                r.setBackgroundColor(Integer.parseInt("#ffc107"));
+            else if(rating[position]<4.0 && rating[position]>=3.0){
+                r.setBackgroundColor(getResources().getColor(R.color.yellow));
             }
             else{
-                r.setBackgroundColor(Integer.parseInt("#28a745"));
-            }*/
+                r.setBackgroundColor(getResources().getColor(R.color.green));
+            }
 
             return view;
         }
