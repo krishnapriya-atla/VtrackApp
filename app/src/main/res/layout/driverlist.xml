@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="#f8f9fa">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#007bff"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/RouteNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="01"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Route No"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/l1"
+        android:id="@+id/l2"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/Bus_img"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_directions_bus_24">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/Stops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/Bus_img"
+                android:text="15 Stops"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AP 35 Ab 4777"
+            android:id="@+id/BusNo"
+            android:textColor="#6f42c1"
+            android:clickable="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:id="@+id/r1"
+            android:layout_marginRight="10dp"
+            android:background="#00de81">
+
+            <ImageView
+                android:id="@+id/Star"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_star_24"></ImageView>
+
+            <TextView
+                android:id="@+id/Rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/Star"
+                android:text="4.5 "
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="75dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="#f2f2f2"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/person"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_person_outline_24">
+            </ImageView>
+            <TextView
+                android:layout_toRightOf="@id/person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="125"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/People"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
