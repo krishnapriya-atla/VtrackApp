@@ -16,74 +16,90 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@drawable/geo"/>
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/txtwelcome"
-                    android:text="Welcome..."
-                    android:textStyle="bold"
-                    android:layout_marginLeft="25dp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="20dp"
-                    android:textSize="30sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
-                <ImageView
-                    android:layout_marginTop="30dp"
-                    android:layout_toRightOf="@+id/txtwelcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/hand">
-                </ImageView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:text="Name:"
                     android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Welcome..."
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
-                <TextView
-                    android:text="Ram Kumar"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_toRightOf="@+id/txtwelcome"
+                    android:background="@drawable/hand"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:text="Name:"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Ram Kumar"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
                     android:text="Phone:"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:textSize="20sp"/>
+
                 <TextView
-                    android:text="+91-896574122"
-                    android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="+91-896574122"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
             </LinearLayout>
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/spinner_shape"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search by Route no,Stop Name" />
         </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -108,16 +124,8 @@
                 </ImageView>
             </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:queryHint="Search by Route no,Stop Name"
-            android:iconifiedByDefault="false"
-            android:layout_margin="25dp"
-            android:background="@color/white"
-            android:layout_alignParentBottom="true"
-            />
+
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -3,16 +3,19 @@ package com.kp.vtrack;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
     static final String rNo[]={"01","02","03","04","05","06","07","08"};
@@ -28,6 +31,18 @@ public class HomePage extends AppCompatActivity {
 
         ListView lv=findViewById(R.id.listview);
         lv.setAdapter(new MyAdapter(this));
+        /*lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(HomePage.this,DriverInfoActivity.class);
+                intent.putExtra("rNO",String.valueOf(rNo[i]));
+                intent.putExtra("stops",String.valueOf(stops[i]));
+                intent.putExtra("BusNames",String.valueOf(BusNames[i]));
+                intent.putExtra("rating",rating[i]);
+                intent.putExtra("people",String.valueOf(people[i]));
+                startActivity(intent);
+            }
+        });*/
     }
     private class MyAdapter extends BaseAdapter {
         Context c;
