@@ -1,21 +1,23 @@
 package com.kp.vtrack;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.squareup.picasso.Picasso;
 
 public class HomePage extends AppCompatActivity {
     static final String rNo[]={"01","02","03","04","05","06","07","08"};
@@ -24,11 +26,19 @@ public class HomePage extends AppCompatActivity {
             "AP 35 AB 1122","AP 35 AB 4777"};
     static final double rating[]={4.5,3.5,2.7,4.5,4.5,3.5,1.7,4.5};
     static final String people[]={"126","75","125","125","125","125","125","125"};
+    //final ArrayList <String> rNo=new ArrayList<>();
+    DatabaseReference reference;
+    String email, name, uid;
+    TextView PName;
+    TextView pno;
+    ImageView profileImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
+        PName=findViewById(R.id.txtName);
+        pno=findViewById(R.id.txtNum);
+        profileImg=findViewById(R.id.profile_image);
         ListView lv=findViewById(R.id.listview);
         lv.setAdapter(new MyAdapter(this));
         /*lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,7 +53,23 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        /*Uri photoUrl = null;
+        if (user != null) {
+            email = user.getEmail();
+            photoUrl = user.getPhotoUrl();
+            uid = user.getUid();
+        }
+        profileImg.setImageTintMode(null);
+        if (!photoUrl.equals("null")){
+            Picasso.get()
+                    .load(photoUrl)
+                    .into(profileImg);
+        }
+        profileImg.setImageURI(photoUrl);*/
     }
+
     private class MyAdapter extends BaseAdapter {
         Context c;
         public MyAdapter(HomePage mainActivity) {
@@ -63,19 +89,19 @@ public class HomePage extends AppCompatActivity {
         }
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View view = LayoutInflater.from(c).inflate(R.layout.driverlist, parent, false);
+            View view = LayoutInflater.from(c).inflate(R.layout.driverlist,parent, false);
             TextView RouteNo = view.findViewById(R.id.RouteNo);
             TextView BusNo = view.findViewById(R.id.BusNo);
             TextView Stops = view.findViewById(R.id.Stops);
             TextView People = view.findViewById(R.id.People);
             TextView Rating = view.findViewById(R.id.Rating);
             RouteNo.setText(rNo[position]);
-            BusNo.setText(BusNames[position]);
+           BusNo.setText(BusNames[position]);
             Stops.setText(stops[position]);
             People.setText(people[position]);
             RelativeLayout r=view.findViewById(R.id.r1);
             Rating.setText(String.valueOf(rating[position]));
-//            System.out.println(Integer.parseInt(rating[position]));
+            //System.out.println(Integer.parseInt(rating[position]));
             if(rating[position]<3.0){
                 r.setBackgroundColor(getResources().getColor(R.color.red));
             }

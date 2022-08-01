@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -15,10 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class DriverInfoActivity extends AppCompatActivity {
     private Spinner Sitem;
     String[] names={"VITAP","VIT"};
     LinearLayout l;
+    Button signout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,16 @@ public class DriverInfoActivity extends AppCompatActivity {
         Sitem=findViewById(R.id.Sitem2);
         Sitem.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item,names));
         l=findViewById(R.id.l5);
+        signout=findViewById(R.id.btn_signOut);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(DriverInfoActivity.this, "LOGED out", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(DriverInfoActivity.this,LoginPageActivity.class));
+                finish();
+            }
+        });
         /*Intent intent = getIntent();
         String rNO=getIntent().getStringExtra("rNO");
         String stops=getIntent().getStringExtra("stops");

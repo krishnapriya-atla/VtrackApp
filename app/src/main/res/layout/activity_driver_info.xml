@@ -311,6 +311,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_marginTop="40dp"
+                    android:id="@+id/btn_stopDriving"
                     android:text="Stop Driving"
                     android:drawableLeft="@drawable/ic_baseline_flag_24"
                     android:backgroundTint="#031ecc"
@@ -319,6 +320,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:id="@+id/btn_changeDriver"
                     android:text="Changr Driver"
                     android:drawableLeft="@drawable/ic_baseline_bus_alert_24"
                     android:backgroundTint="#ffc107"
@@ -328,6 +330,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="Sign Out"
+                    android:id="@+id/btn_signOut"
                     android:drawableLeft="@drawable/ic_baseline_login_24"
                     android:backgroundTint="#fb3046"
                     android:layout_marginLeft="30dp"

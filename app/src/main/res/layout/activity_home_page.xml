@@ -35,14 +35,14 @@
                     android:text="Welcome..."
                     android:textColor="@color/white"
                     android:textSize="30sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_toRightOf="@+id/txtwelcome"
-                    android:background="@drawable/hand"/>
+                    android:background="@drawable/hand" />
             </LinearLayout>
 
             <LinearLayout
@@ -56,15 +56,16 @@
                     android:layout_marginLeft="25dp"
                     android:text="Name:"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
+                    android:id="@+id/txtName"
                     android:text="Ram Kumar"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,15 +79,16 @@
                     android:layout_marginLeft="25dp"
                     android:text="Phone:"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
+                    android:id="@+id/txtNum"
                     android:text="+91-896574122"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <SearchView
@@ -101,27 +103,31 @@
                 android:iconifiedByDefault="false"
                 android:queryHint="Search by Route no,Stop Name" />
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_margin="25dp"
-            android:layout_height="80dp">
+            android:layout_height="80dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp">
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/profile_image_card"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="right"
                 app:cardCornerRadius="50dp">
+
                 <ImageView
                     android:id="@+id/profile_image"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/profile">
-                </ImageView>
+                    android:src="@drawable/profile"/>
             </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
 
